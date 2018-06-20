@@ -15,7 +15,7 @@ describe("Hello World Server", function() {
 
 		it("returns Hello World", function(done) {
 			request.get(base_url, function(error, response, body){
-				expect(body).toBe("Hello World");
+				expect(body).toBe(JSON.stringify(["Hello World", "Hello World", "Hello World"]));
 				done();
 			});
 		});

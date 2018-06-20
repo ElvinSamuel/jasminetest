@@ -2,7 +2,10 @@ var express = require('express'),
     app     = express();
 
 app.get("/", function(req, res){
-	res.send("Hello World");
+	var number = req.params.number;
+	var helloWorldArray = generator.generateHelloWorlds(number);
+
+	res.send(200, helloWorldArray);
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
